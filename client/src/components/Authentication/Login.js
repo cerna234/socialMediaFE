@@ -4,6 +4,7 @@ import Cookies from "universal-cookie";
 import axios from "axios";
 import "../../styles/Login.css"
 import NavBar from "../NavBar/Navbar"
+import * as constants from "../../Constants"
 
 export default function Login() {
 
@@ -15,7 +16,7 @@ const cookies = new Cookies();
 const handleSubmit = (e) => {
     const configuration = {
         method: "post",
-        url: "http://localhost:3005/login",
+        url: `${constants.BASE_URL}/user/login`,
         data: {
           email,
           password,
@@ -37,7 +38,7 @@ const handleSubmit = (e) => {
         error = new Error();
       });
     e.preventDefault();
-   
+
   }
     return (
         <div className="LoginPage">

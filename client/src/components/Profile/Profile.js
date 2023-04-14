@@ -6,6 +6,7 @@ import Cookies from "universal-cookie";
 import  Navbar from "../../components/NavBar/Navbar"
 import "../../styles/profile.css"
 import UserPosts from "./UserPosts";
+import * as constants from "../../Constants"
 
 
 const cookies = new Cookies();
@@ -22,7 +23,7 @@ export default function Profile() {
     // set configurations for the API call here
     const configuration = {
       method: "get",
-      url: "http://localhost:3005/profile",
+      url: `${constants.BASE_URL}/user/profile`,
       headers: {
         Authorization: `Bearer ${token}`,
       },

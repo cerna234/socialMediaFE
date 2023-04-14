@@ -4,6 +4,7 @@ import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 import axios from "axios";
 import "../../styles/Login.css"
+import * as constants from "../../Constants"
 
 export default function Register() {
 
@@ -14,7 +15,7 @@ export default function Register() {
     const handleSubmit = (e) => {
         const configuration = {
             method: "post",
-            url: "http://localhost:3005/register",
+            url: `${constants.BASE_URL}/user/register`,
             data: {
               email,
               password,
