@@ -1,13 +1,13 @@
 
 import React, { useEffect, useState } from "react";
-import { Button } from "react-bootstrap";
+
 import axios from "axios";
 import Cookies from "universal-cookie";
-import  Navbar from "../../components/NavBar/Navbar"
 import "../../styles/profile.css"
-import UserPosts from "./UserPosts";
+import UserPosts from "../../Posts/UserPosts";
 import * as constants from "../../Constants"
-
+import { Button } from "react-bootstrap";
+import Navbar from "../NavBar/Navbar";
 
 const cookies = new Cookies();
 
@@ -42,6 +42,12 @@ export default function Profile() {
       });
   }, []);
 
+  const logout = () => {
+    // destroy the cookie
+    cookies.remove("TOKEN", { path: "/" });
+    // redirect user to the landing page
+    window.location.href = "/";
+  }
 
 
   return (
@@ -70,6 +76,9 @@ export default function Profile() {
           </div>
           <div className="profileInformationSection">
             <p>MOOD ICON</p>
+            <Button type="submit" variant="danger" onClick={() => logout()}>
+        Logout
+      </Button>
           </div>
         </div>
 
