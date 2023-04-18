@@ -1,18 +1,18 @@
 const navBardata = [
     {
         "icon":"icom",
-        "title":"title",
+        "title":"PopularPosts",
         "location":"/"
     },
     {
         "icon":"icom3",
-        "title":"title",
+        "title":"Profile",
         "location":"/profile"
     },
     {
         "icon":"icom7",
         "title":"title",
-        "location":"/free"
+        "location":"/Trending"
     }
 ]
 

@@ -17,7 +17,7 @@
 .formSection{
     width: 50%;
     height: 100%;
-    background-color: rgb(231, 232, 231);
+    background-color: rgb(40, 43, 47);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,17 +55,17 @@
 
 .formQuestion{
     margin: 10px;
+    color: white;
 }
 
 .formTitle{
     margin: 10px;
     font-weight: bold;
-    color: rgb(45, 45, 45);
+    color: rgb(246, 243, 243);
 }
 .splashPageSection{
     width: 50%;
     height: 100%;
-    background-image: url("../Images/splashBackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
