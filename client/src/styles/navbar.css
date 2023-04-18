@@ -1,18 +1,56 @@
 
 .navBar{
-    width: 20vh;
+    width: 30vh;
+    z-index: 100;
     height: 100%;
-    background-color: #192436;
+    background-color: #181b20;
     position: fixed;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.111);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
    
 }
+.navBarClosed{
+    width: 10vh;
+    z-index: 100;
+    height: 100%;
+    background-color: #181b20;
+    position: fixed;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.111);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: 0;
+}
 
+.closeNavContainer{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 20px;
+
+}
+.closeNav{
+    color: white;
+
+    
+}
+.navLogoutButton{
+   position: relative;
+   top: -10px;
+}
+.userName{
+    color: white;
+    font-weight: bold;
+}
 
 .profileImage{
     width: 100px;
     height: 100px;
     border-radius: 100px;
-    background-image: url("../Images//profileImgPlaceholder.jpeg");
+    background-image: url("https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
     background-size: cover;
     background-position: center;
 }
@@ -27,11 +65,42 @@
 .navButtonContainer{
     width: 100%;
     height: 70%;
-    background-color: rgb(152, 201, 127);
 }
 
 .buttonSection{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    background-color: rgba(245, 222, 179, 0);
+    border: none;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding: 20px;
+    align-items: center;
+    
+ 
+    
+}
+
+
+.navIcon{
+    width: 50%;
+    color: rgba(241, 241, 241, 0.965);
+    font-size: 40px;
+    height: 100%;
+}
+
+
+.navIconClosed{
+    width: 100%;
+    color: rgba(241, 241, 241, 0.965);
+    font-size: 30px;
+    height: 100%;
+}
+
+.navTitle{
+    width: 50%;
+    text-align: left;
+    color: rgba(241, 241, 241, 0.965);
+    height: 100%;
 }

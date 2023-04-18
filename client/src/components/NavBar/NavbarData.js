@@ -1,17 +1,19 @@
+import { AiFillFire,AiOutlineUser,AiTwotoneSetting } from "react-icons/ai";
+
 const navBardata = [
     {
-        "icon":"icom",
-        "title":"PopularPosts",
-        "location":"/"
+        "icon":<AiFillFire/>,
+        "title":"Trending",
+        "location":"/trending"
     },
     {
-        "icon":"icom3",
+        "icon":<AiOutlineUser/>,
         "title":"Profile",
         "location":"/profile"
     },
     {
-        "icon":"icom7",
-        "title":"title",
+        "icon":<AiTwotoneSetting/>,
+        "title":"Settings",
         "location":"/Trending"
     }
 ]

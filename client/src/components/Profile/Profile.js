@@ -68,17 +68,12 @@ export default function Profile({section}) {
   
   []);
 
-  const logout = () => {
-    // destroy the cookie
-    cookies.remove("TOKEN", { path: "/" });
-    // redirect user to the landing page
-    window.location.href = "/";
-  }
+ 
 
 
   return (
     <div className="profilePage">
-     
+     <Navbar/>
      
     
       <div className="innerContainer">
@@ -100,12 +95,7 @@ export default function Profile({section}) {
             </div>
              
           </div>
-          <div className="profileInformationSection">
-            <p>MOOD ICON</p>
-            <Button type="submit" variant="danger" onClick={() => logout()}>
-        Logout
-      </Button>
-          </div>
+         
         </div>
 
 
