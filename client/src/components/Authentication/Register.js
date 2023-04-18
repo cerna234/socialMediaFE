@@ -36,10 +36,10 @@ export default function Register() {
     return (
       <div className="LoginPage">
 
-      <div className="splashPageSection">
+      <div style={{backgroundImage:`url("https://images.unsplash.com/photo-1613578519735-ce2724cdec3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80")`}} className="splashPageSection">
        <div className="innerContainer">
-          <p className="loginSplashTitle">Welcome back!</p>
-          <p className="loginSplashSubtext">Sign in to access your account.</p>
+        
+          
        </div>
       </div>
       <div className="formSection">
