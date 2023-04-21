@@ -67,7 +67,7 @@ const Navbar = () => {
 
 
   const closeNav = () => {
-    navOpen == true ? setNavOpen(false) : setNavOpen(true); 
+    navOpen === true ? setNavOpen(false) : setNavOpen(true); 
   }
    
     return(
