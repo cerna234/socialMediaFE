@@ -4,7 +4,7 @@ import AddPosts from "./components/Profile/AddPost";
 import Register from "./components/Authentication/Register";
 import Posts from "./Posts/UserPosts";
 import Trending from "./components/Trending/Trending";
-import Test from "./Test";
+
 import ProtectedRoute from "../src/components/Authentication/ProtectedRoute";
 import { Routes ,Route } from 'react-router-dom';
 import Login from "./components/Authentication/Login";
@@ -21,7 +21,7 @@ function App() {
         <Routes>
                 <Route path="/" element={<Login/>} />
                 <Route path="/register" element={<Register/>} />
-                <Route path="/test" element={<Test/>} />
+
             
                 
                 <Route path='trending'
