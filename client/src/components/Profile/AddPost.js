@@ -1,16 +1,17 @@
-import Profile from "./Profile";
+
 import "../../styles/addPosts.css"
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { Button } from "react-bootstrap";
 import  axios  from "axios";
 import Cookies from "universal-cookie";
 import * as constants from "../../Constants"
-import {AiFillFastBackward } from "react-icons/ai";
+import {AiOutlineCloudUpload } from "react-icons/ai";
 
 const AddPosts = () => {
     const[title,setPostTitle] = useState();
     const[caption,setPostCaption] = useState();
-    const[postImage,setPostImage] = useState(null);
+    const [file, setFile] = useState()
+    const [preview, setPreview] = useState(null)
   
    
     const cookies = new Cookies();
@@ -21,31 +22,27 @@ const AddPosts = () => {
 
 
    
+    const fileSelected = event => {
+      const file = event.target.files[0]
+          setPreview(URL.createObjectURL(event.target.files[0]))
+          setFile(file)
+         
+      }
 
    
-    const handleSubmit = (e) => {
-
+    const handleSubmit = async (e) => {
+      e.preventDefault()
       
-        const configuration = {
-            method: "post",
-            url: `${constants.BASE_URL}/posts/createPost`,
-            data: {
-              title,
-              caption,
-              postImage
-            },
-            headers: {
-                Authorization: `Bearer ${token}`,
-              },
-          };
-    
-    
-          axios(configuration)
+      const formData = new FormData();
+      formData.append("image", file)
+      formData.append("caption", caption)
+      formData.append("title", title)
+      await axios.post(`${constants.BASE_URL}/posts/createPost`, 
+        formData, 
+          { headers: {'Content-Type': 'multipart/form-data','Authorization' : `Bearer ${token}`}})
+
           .then((result) => {
-            
-    
-    
-          
+       
             window.location.href = "/profile";
           })
           .catch((error) => {
@@ -57,13 +54,13 @@ const AddPosts = () => {
 
      
     return (
-
+      
         <div className="addPosts">
 
             <div className="postUploadSection">
               <div className="postUploadPreview">
                   <p className="postTitle">{title}</p>
-                  <div style={{backgroundImage:`url("${postImage}")`}} className="postImagePreview"></div>
+                  <div style={{backgroundImage:`url("${preview}")`}} className="postImagePreview"></div>
                   
                   <p className="postCaption">{caption}</p>
 
@@ -79,7 +76,7 @@ const AddPosts = () => {
                
                
                 <input
-                    type="email"
+                    type="text"
                     name="email"
                     value={title}
                     onChange={(e) => setPostTitle(e.target.value)}
@@ -88,7 +85,7 @@ const AddPosts = () => {
                     
                 />
                 <input
-                    type="email"
+                    type="text"
                     name="email"
                     value={caption}
                     onChange={(e) => setPostCaption(e.target.value)}
@@ -97,16 +94,11 @@ const AddPosts = () => {
                     
                 />
 
-                <input
-                    type="email"
-                    name="email"
-                    value={postImage}
-                    onChange={(e) => setPostImage(e.target.value)}
-                    placeholder="Enter image"
-                    className="postUploadInput"
-                    
-                />  
                 
+              <label class="custom-file-upload">
+                <input onChange={fileSelected} type="file" accept="image/*"/>
+                <AiOutlineCloudUpload className="uploadIcon"/>Upload
+            </label>
                
                
 
