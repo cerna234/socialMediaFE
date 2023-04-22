@@ -76,6 +76,27 @@
     padding: 20px;
 }
 
+.uploadIcon{
+    font-size: 30px;
+    position: relative;
+    right: 5px;
+    width: 50%;
+    
+}
+input[type="file"] {
+    display: none;
+    width: 50%;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+}
+
 .clearPostContainer{
     width: 80%;
     height: 10%;

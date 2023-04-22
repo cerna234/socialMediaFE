@@ -16,13 +16,11 @@ import * as constants from "../Constants"
 const Posts = ({url}) => {
 
     const navigate = useNavigate();
-    const [title, settitle] = useState("");
-    const [caption, setcaption] = useState("");
-    const [postImage, setpostImage] = useState(false);
+ 
     const [posts, setPosts] = useState([]);
     const cookies = new Cookies();
     const token = cookies.get("TOKEN");
-    {console.log(url)}
+   
 
     useEffect(() => {
 

@@ -4,9 +4,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import "../../styles/profile.css"
-import Posts from "../../Posts/UserPosts";
+
 import * as constants from "../../Constants"
-import { Button } from "react-bootstrap";
 import Navbar from "../NavBar/Navbar";
 import ProfileNav from "../../Posts/ProfileNav/ProfileNav";
 
