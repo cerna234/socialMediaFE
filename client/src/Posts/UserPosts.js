@@ -20,6 +20,7 @@ const Posts = ({url}) => {
     const [posts, setPosts] = useState([]);
     const cookies = new Cookies();
     const token = cookies.get("TOKEN");
+    
    
 
     useEffect(() => {
@@ -54,6 +55,12 @@ const Posts = ({url}) => {
      },[]);
 
 
+     const individualPost = (individualPostId) => {
+       
+        window.location.href = `/post/${individualPostId}`;
+     }
+
+
    
     return (
         <div className="userPosts">
@@ -75,7 +82,7 @@ const Posts = ({url}) => {
                            
 
 
-                        <Col key={key} className="column" lg>
+                        <Col key={key} onClick={() => {individualPost(value._id)}} className="column" lg>
                             <div style={{backgroundImage:`url(${value.postImage})`}}  className="postPreview">
                                <div className="postInfo">
                                     <div className="postInfoInner">
@@ -87,6 +94,7 @@ const Posts = ({url}) => {
                                </div> 
                             </div>
                         
+                    
                         </Col>
                             
 
@@ -100,10 +108,8 @@ const Posts = ({url}) => {
          
             :
             <div className="noPosts"> 
-                <p>No posts</p>
-                <AiOutlinePlusSquare className="noPostsAddition" onClick={() => {
-                    navigate("/createPost");
-                }}/>
+                <p>Nothing here yet</p>
+                
 
             </div>
             

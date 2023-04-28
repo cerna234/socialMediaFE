@@ -88,8 +88,8 @@ export default function Profile({section}) {
           <div className="profileInformationSection">
             <div className="userinformation">
               <p className="userInformationText">{message.email}</p>
-              <p className="userInformationText">{numberOfPosts} Posts</p>
-              <p className="userInformationText">12 Followrs</p>
+              <p className="userInformationText">{numberOfPosts} {numberOfPosts > 1 ? " posts" : "post"}  </p>
+      
              
             </div>
              

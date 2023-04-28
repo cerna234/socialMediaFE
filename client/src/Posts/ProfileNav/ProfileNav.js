@@ -11,14 +11,15 @@ const ProfileNav = () => {
             <div className="innerProfileNav">
 
                 <button className="profileNavButton" onClick={() => {
-                    navigate("/profile");
+                    window.location.href = "/profile"
                 }}>
                     <AiOutlineAppstore className="ProfileIcon"/>
                     
                 </button>
 
                 <button className="profileNavButton" onClick={() => {
-                    navigate("/createPost");
+                   
+                    window.location.href = "/createPost"
                 }}>
 
                     <AiOutlinePlusSquare className="ProfileIcon"/>
@@ -26,7 +27,8 @@ const ProfileNav = () => {
                 </button>
 
                 <button className="profileNavButton" onClick={() => {
-                    navigate("/");
+                    
+                    window.location.href = "/likedPosts"
                 }}>
 
                     <AiFillHeart className="ProfileIcon"/>

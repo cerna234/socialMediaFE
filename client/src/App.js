@@ -4,7 +4,8 @@ import AddPosts from "./components/Profile/AddPost";
 import Register from "./components/Authentication/Register";
 import Posts from "./Posts/UserPosts";
 import Trending from "./components/Trending/Trending";
-
+import IndividualPost from "./Posts/IndividualPost";
+import ProfileSettings from "./components/Profile/ProfileSettings";
 import ProtectedRoute from "../src/components/Authentication/ProtectedRoute";
 import { Routes ,Route } from 'react-router-dom';
 import Login from "./components/Authentication/Login";
@@ -13,6 +14,7 @@ import Navbar from "./components/NavBar/Navbar";
 
 
 function App() {
+
   return (
 
 
@@ -46,6 +48,32 @@ function App() {
                    </ProtectedRoute>
                  }
                />
+
+
+              <Route path='/post/:Id'
+                 element={
+                   <ProtectedRoute AuthenticatedComponent={<IndividualPost/>} >
+                  
+                   </ProtectedRoute>
+                 }
+               />
+              <Route path='/likedPosts'
+                 element={
+                   <ProtectedRoute AuthenticatedComponent={<Profile section={<Posts url="/posts/userLikes"/>}/>}>
+                  
+                   </ProtectedRoute>
+                 }
+               />
+
+              <Route path='/profileSettings'
+                 element={
+                   <ProtectedRoute AuthenticatedComponent={<ProfileSettings/>}>
+                  
+                   </ProtectedRoute>
+                 }
+               />
+
+        
 
         </Routes>
 
