@@ -1,0 +1,100 @@
+.individualPostPage{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(25, 37, 51);
+    display: flex;
+
+    align-items: left;
+    padding: 20px;
+}
+
+.individualPost{
+    width: 50%;
+    height: 100%;
+}
+
+.backButton{
+    color: white;
+    font-size: 20px;
+  
+}
+
+.backButton:hover{
+    cursor: pointer;
+    
+  
+}
+.postImage{
+    width: 100%;
+    height: 50%;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.259);
+}
+
+.individualPostInfo{
+    width: 100%;
+    height: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 20px;
+
+    justify-content: space-evenly;
+}
+
+.individualpostInformation{
+    width: 60%;
+    height: 20%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+   
+   
+}
+
+.individualPostInteractions{
+    width: 60%;
+    height: 20%;
+    color: white;
+    
+    font-size: 20px;
+   
+}
+
+.individualPostInner{
+    width: 20%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.IndividualTrendingPosts{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.individualPostTrendingTitleContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20%;
+}
+.trendingTitle{
+    color: white;
+    
+}
+.trendingIcon{
+   
+    color: orange;
+}

@@ -14,7 +14,7 @@ const navBardata = [
     {
         "icon":<AiTwotoneSetting/>,
         "title":"Settings",
-        "location":"/Trending"
+        "location":"/profileSettings"
     }
 ]
 
