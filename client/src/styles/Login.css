@@ -35,11 +35,10 @@
 
 .formInput{
     padding: 10px 20px;
-    background-color: rgba(137, 137, 137, 0.098);
     border: none;
     margin: 10px;
     box-shadow: 10px 10px 15px rgba(136, 135, 135, 0.076);
-    color: rgba(202, 199, 199, 0.904);
+    color: rgba(28, 28, 28, 0.904);
 }
 
 .formButton{

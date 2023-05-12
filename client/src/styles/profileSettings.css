@@ -11,7 +11,7 @@
 .profileSettingsInner{
     width: 80%;
     height: 80%;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(74, 71, 71, 0.343);
     border-radius: 40px;
     display: flex;
     flex-direction: column;
@@ -23,5 +23,30 @@
     width: 200px;
     height: 200px;
     border-radius: 200px;
-    background-color: blue;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.profileSettingDate{
+    color: white;
+}
+
+.custom-file-upload-ProfileSettings{
+    background-color: rgba(183, 182, 182, 0);
+    color: white;
+    position: relative;
+    bottom: 40px;
+    padding: 10px;
+ 
+}
+
+.profileSettingDateInput{
+    background-color: rgba(30, 30, 30, 0.692);
+    padding: 20px;
+    color: white;
+    border: none;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.314);
 }

@@ -23,20 +23,29 @@ const AddPosts = () => {
 
    
     const fileSelected = event => {
-      const file = event.target.files[0]
-          setPreview(URL.createObjectURL(event.target.files[0]))
-          setFile(file)
+          
+
+          if(event.target.files[0] !== undefined){
+            const file = event.target.files[0];
+            setPreview(URL.createObjectURL(event.target.files[0]))
+            setFile(file)
+          }
+          
+
+       
+          
          
       }
 
    
     const handleSubmit = async (e) => {
-      e.preventDefault()
+
       
       const formData = new FormData();
       formData.append("image", file)
       formData.append("caption", caption)
       formData.append("title", title)
+      
       await axios.post(`${constants.BASE_URL}/posts/createPost`, 
         formData, 
           { headers: {'Content-Type': 'multipart/form-data','Authorization' : `Bearer ${token}`}})

@@ -7,6 +7,7 @@ import * as constants from "../Constants"
 import "../styles/individualPost.css"
 import Trending from "../components/Trending/Trending";
 import Posts from "./UserPosts";
+import Navbar from "../components/NavBar/Navbar";
 const IndividualPost = () => {
 
     const { Id } = useParams();
@@ -116,57 +117,69 @@ const IndividualPost = () => {
 
      const back = () => {
       window.location.href = "/profile";
-      console.log("hello")
      }
     return (
-
-      postData  ? 
-            <div className="individualPostPage">
-
-              <div className="individualPost">
-              <AiOutlineArrowLeft onClick={ () => {back()}} className="backButton" />
-                <div className="postImage" style={{backgroundImage:`url(${postData.postImage})`}}>
-                  
-                  </div>
-  
-                  <div className="individualPostInfo">
-                      <div className="individualpostInformation">
-                          <p>{postData.title}</p>
-                          <p>{postData.caption}</p>
-                      </div>
-
-                      <div className="individualPostInteractions">
-                        <div className="individualPostInner">
-                        <p onClick={() => {
-                            postLike()
-                          }}><AiFillHeart style={{color: liked == true ? "red" : "white"}} /></p>
-                          <p>{likes}</p>
-
-                        </div>
-                        
-              
-                          
-                      </div>
-
-                  </div>
-              </div>
+      <>
+      <Navbar/>
+      
+      {postData  ? 
 
 
-              <div className="IndividualTrendingPosts">
-                <div className="individualPostTrendingTitleContainer">
-                  <AiFillFire className="trendingIcon"/>
-                  <p className="trendingTitle">TRENDING POSTS</p>
+      <div className="individualPostPage">
+        <div className="individualPostPageInner">
+             
 
+             <div className="individualPost">
+             
+               <div className="postImage" style={{backgroundImage:`url(${postData.postImage})`}}>
+                 
                 </div>
-                
-               <Posts url="/posts/trending"/>
-              </div>
+ 
+                 <div className="individualPostInfo">
+                     <div className="individualpostInformation">
+                         <p>{postData.title}</p>
+                         <p>{postData.caption}</p>
+                     </div>
+
+                     <div className="individualPostInteractions">
+                       <div className="individualPostInner">
+                       <p onClick={() => {
+                           postLike()
+                         }}><AiFillHeart style={{color: liked == true ? "red" : "white"}} /></p>
+                         <p>{likes}</p>
+
+                       </div>
+                       
+             
+                         
+                     </div>
+
+                 </div>
+             </div>
+
+
+             <div className="IndividualTrendingPosts">
+               <div className="individualPostTrendingTitleContainer">
+                 <AiFillFire className="trendingIcon"/>
+                 <p className="trendingTitle">TRENDING POSTS</p>
+
+               </div>
                
-         </div>
+              <Posts url="/posts/trending"/>
+             </div>
+              
+        </div>
+
+      </div>
+      
 
          :
 
          <div>WAITING</div>
+        }
+     
+      </>
+            
         
        
     )

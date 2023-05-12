@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import "../../styles/profile.css"
-
+import { FaBirthdayCake } from "react-icons/fa";
 import * as constants from "../../Constants"
 import Navbar from "../NavBar/Navbar";
 import ProfileNav from "../../Posts/ProfileNav/ProfileNav";
@@ -43,7 +43,9 @@ export default function Profile({section}) {
     axios(configuration1)
       .then((result) => {
         // assign the message in our result to the message we initialized above
+      
         setMessage(result.data);
+        console.log(result.data)
         
       })
       .catch((error) => {
@@ -79,17 +81,19 @@ export default function Profile({section}) {
       
         <div className="profileInformation">
           <div className="profileInformationSection">
-            <div className="profileImageSection">
-                <div className="profileImg">
+            
+           
+                <div style={{backgroundImage: `url(${message.profileImg})`}} className="profileImg">
 
                 </div>
-            </div>
+            
           </div>
           <div className="profileInformationSection">
             <div className="userinformation">
               <p className="userInformationText">{message.email}</p>
               <p className="userInformationText">{numberOfPosts} {numberOfPosts > 1 ? " posts" : "post"}  </p>
-      
+              <p className="userInformationText"><FaBirthdayCake/> {message.birthday} </p>
+             
              
             </div>
              

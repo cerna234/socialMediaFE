@@ -14,6 +14,8 @@ import {AiOutlineCaretLeft,AiFillCaretRight} from "react-icons/ai"
 const Navbar = () => {
    const [username,setUsername] = useState();
    const [navOpen, setNavOpen] = useState(true);
+   const [profileImg,setProfileImg] = useState()
+   
 
     const navigate = (test) => {
         window.location.href = test;
@@ -49,6 +51,8 @@ const Navbar = () => {
       .then((result) => {
         // assign the message in our result to the message we initialized above
         setUsername(result.data.email);
+        setProfileImg(result.data.profileImg)
+
      
         
       })
@@ -85,7 +89,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="navProfileInfo">
-                    <div onClick={ () => {navigate("/profile")}} className="profileImage"></div>
+                    <div onClick={ () => {navigate("/profile")}} className="profileImage" style={{backgroundImage: `url("${profileImg}")`}}></div>
                     <p className="userName">{username}</p>
                 </div>
                 {/* logout */}

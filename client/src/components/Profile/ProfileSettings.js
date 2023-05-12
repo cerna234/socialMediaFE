@@ -2,43 +2,85 @@
 import "../../styles/profileSettings.css"
 import Navbar from "../../components/NavBar/Navbar"
 import { Form, Button } from "react-bootstrap";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import * as constants from "../../Constants"
+import {AiOutlineCloudUpload } from "react-icons/ai";
+import { FaBirthdayCake } from "react-icons/fa";
 const ProfileSettings = () => {
 
     const [username, setUsername] = useState("");
+    const [file, setFile] = useState()
+    const [backgroundColor, setColor] = useState()
+    const [preview, setPreview] = useState(null)
+    const [profileData,setProfileData] = useState()
+    const [date,setDate] = useState()
     const cookies = new Cookies();
     const token = cookies.get("TOKEN");
 
-
-const handleSubmit = (e) => {
-    const configuration = {
-        method: "put",
-        url: `${constants.BASE_URL}/user/profileUpdate`,
-
+    useEffect(() => {
+      // set configurations for the API call here
+      const configuration = {
+        method: "get",
+        url: `${constants.BASE_URL}/user/profile`,
         headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        data: {
-          
-        email :  username,
-        profileImg: username,
-        
-        profileBackgroundImage: username
-         
+          Authorization: `Bearer ${token}`,
         },
       };
-
-
-      axios(configuration)
-      .then((result) => {
-        console.log(result.data)
-       
-
-
+  
       
+  
+  
+      // make the API call
+      axios(configuration)
+        .then((result) => {
+          // assign the message in our result to the message we initialized above
+        
+          setProfileData(result.data);
+          
+        })
+        .catch((error) => {
+          error = new Error();
+        });
+  
+  
+   
+    },
+    
+    
+    
+    
+    []);
+
+  const fileSelected = event => {
+          
+
+    if(event.target.files[0] !== undefined){
+      const file = event.target.files[0];
+      setPreview(URL.createObjectURL(event.target.files[0]))
+      setFile(file)
+      console.log(file)
+    }
+ 
+   
+}
+const handleSubmit = async (e) => {
+
+
+  const formData = new FormData();
+  formData.append("profileImg", file)
+  formData.append("profileBackgroundColor", backgroundColor)
+  formData.append("birthday", date)
+
+
+  
+  await axios.put(`${constants.BASE_URL}/user/profileUpdate`, 
+    formData, 
+      { headers: {'Content-Type': 'multipart/form-data','Authorization' : `Bearer ${token}`}})
+
+      .then((result) => {
+   
         
       })
       .catch((error) => {
@@ -47,34 +89,36 @@ const handleSubmit = (e) => {
     e.preventDefault();
 
   }
+
+
+
     return (
         <div className="profileSetingsPage">
             <Navbar/>
            
 
             <Form className="profileSettingsInner" >
-                <div className="profileImageSettings">
-                 
+                <div style={{backgroundImage: `url(${ preview === null ? profileData?.profileImg : preview})`}} className="profileImageSettings">
+                  <label class="custom-file-upload-ProfileSettings">
+                    <input onChange={fileSelected} type="file" accept="image/*"/>
+                    <AiOutlineCloudUpload className="uploadIconProfileSettings"/>Profile Image
+                  </label>
                  </div>
-                 <button>change profile image</button>
+                 
 
                  
 
 
                
-        
+                 <p style={{color:"red"}}>{backgroundColor}</p>
 
+                 
+             
+              <p className="profileSettingDate"><FaBirthdayCake/> {profileData?.birthday}</p>
+         
+              <input type="date" className="profileSettingDateInput" value={profileData?.birthday} onChange={e => {setDate(e.target.value)}}></input>
 
-                 <input
-                type="text"
-                name="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="Enter new Username"
-                className="formInput"
-              />
-
-
+      
                 <Button
                 variant="primary"
                 type="submit"
