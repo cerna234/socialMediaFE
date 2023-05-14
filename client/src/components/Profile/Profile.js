@@ -45,7 +45,7 @@ export default function Profile({section}) {
         // assign the message in our result to the message we initialized above
       
         setMessage(result.data);
-        console.log(result.data)
+      
         
       })
       .catch((error) => {
@@ -82,8 +82,8 @@ export default function Profile({section}) {
         <div className="profileInformation">
           <div className="profileInformationSection">
             
-           
-                <div style={{backgroundImage: `url(${message.profileImg})`}} className="profileImg">
+            
+                <div style={{backgroundImage: `url(${message?.profileImg})`}} className="profileImg">
 
                 </div>
             

@@ -60,7 +60,7 @@ const ProfileSettings = () => {
       const file = event.target.files[0];
       setPreview(URL.createObjectURL(event.target.files[0]))
       setFile(file)
-      console.log(file)
+      
     }
  
    
