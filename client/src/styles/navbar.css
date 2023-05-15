@@ -2,7 +2,7 @@
 .navBar{
     width: 30vh;
     z-index: 100;
-    height: 100%;
+    height: 100vh;
     background-color: #181b20;
     position: fixed;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.111);
@@ -10,6 +10,10 @@
     flex-direction: column;
     align-items: center;
     left: 0;
+    top: 0;
+    overflow-y: scroll;
+    min-height: 200px;
+    min-width: 130px;
    
 }
 .navBarClosed{
@@ -104,3 +108,33 @@
     color: rgba(241, 241, 241, 0.965);
     height: 100%;
 }
+
+
+@media only screen and (max-width: 600px) {
+   
+  
+
+    .navBar{
+        width: 20vh;
+       
+       
+    }
+    .navIcon{
+        font-size: 30px;
+    
+    }
+    
+    
+    .navIconClosed{
+        width: 100%;
+       
+        font-size: 30px;
+        
+    }
+
+    .navTitle{
+        
+   
+        font-size: 13px;
+    }
+  }

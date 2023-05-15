@@ -34,3 +34,15 @@
     font-size: 40px;
     text-shadow: 2px 3px 5px black;
 }
+
+
+
+@media only screen and (max-width: 600px) {
+    .ProfileIcon{
+        
+        font-size: 30px;
+
+    }
+  
+
+  }
