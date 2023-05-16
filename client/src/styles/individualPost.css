@@ -54,6 +54,7 @@
     border-radius: 20px;
     justify-content: space-evenly;
     
+    
 }
 
 .individualpostInformation{
@@ -110,3 +111,68 @@
    
     color: orange;
 }
+
+
+@media only screen and (max-width: 600px) {
+   
+    .individualPostPageInner{
+        width: 80%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+       
+    
+    }
+
+    
+    
+
+    .IndividualTrendingPosts{
+        width: 100%;
+        height: 50%;
+       display: none;
+      
+    
+    }
+
+
+.individualPost{
+    width: 90%;
+    height: 100%;
+    position: relative;
+    padding-left: 10%;
+  
+}
+
+.postImage{
+    width: 100%;
+    height: 50%;
+    
+   
+
+   
+}
+.individualPostInfo{
+    width: 100%;
+    height: 50%;
+    
+    
+    
+}
+
+.individualPostInner{
+    width: 30%;
+
+}
+    
+
+.individualpostInformation{
+    width: 100%;
+    height: 20%;
+    font-size: 15px;
+ 
+   
+   
+}
+
+  }
