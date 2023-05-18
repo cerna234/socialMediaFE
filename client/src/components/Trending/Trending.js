@@ -8,7 +8,8 @@ const Trending = () => {
         <Navbar/>
          <div className="trendingPosts">
            
-           <p>TRENDING POSTS</p>
+           <p className="trendingPostTitle">TRENDING</p>
+  
           <Posts url="/posts/trending"/>
         
          

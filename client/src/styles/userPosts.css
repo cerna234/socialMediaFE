@@ -2,7 +2,8 @@
     width: 100%;
     height: 100%;
    
-    border-radius: 30px;
+
+    border-radius: 0px;
     position: relative;
     overflow-y: scroll;
     padding: 10px;
@@ -11,10 +12,10 @@
 }
 
 .postsPreview{
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.268);
-    border-radius: 20px;
+    border-radius: 0px;
 
 }
 
@@ -24,6 +25,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+   
+   
    
 }
 .postPreview{
@@ -96,5 +99,7 @@
     color: white;
     font-weight: bold;
     text-align: center;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.663);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.474);
 }
