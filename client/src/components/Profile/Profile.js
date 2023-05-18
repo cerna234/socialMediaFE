@@ -78,17 +78,20 @@ export default function Profile({section}) {
      
     
       <div className="innerContainer">
-      
+
         <div className="profileInformation">
+        
           <div className="profileInformationSection">
-            
+
             
                 <div style={{backgroundImage: `url(${message?.profileImg})`}} className="profileImg">
 
                 </div>
             
           </div>
+          
           <div className="profileInformationSection">
+          
             <div className="userinformation">
               <p className="userInformationText">{message.email}</p>
               <p className="userInformationText">{numberOfPosts} {numberOfPosts > 1 ? " posts" : "post"}  </p>
