@@ -79,7 +79,7 @@ const Navbar = () => {
 
         <>
             {
-            navOpen ?
+            !navOpen ?
             <div className="navBar">
 
 

@@ -26,6 +26,7 @@ const handleSubmit = (e) => {
 
       axios(configuration)
       .then((result) => {
+        
         cookies.set("TOKEN", result.data.token, {
             path: "/",
           });

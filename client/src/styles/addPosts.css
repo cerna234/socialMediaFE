@@ -4,7 +4,15 @@
     display: flex;
 }
 
+.uploading{
+    width: 100%;
+    height: 30%;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 .postUploadSection{
     width: 50%;
     height: 100%;
