@@ -5,6 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import "../../styles/Login.css"
 import * as constants from "../../Constants"
+import { ProgressBar} from  'react-loader-spinner'
 
 export default function Register() {
 
@@ -13,12 +14,13 @@ export default function Register() {
     const [birthday, setBirthday] = useState("");
     const [register, setRegister] = useState(false);
     const [error, setError] = useState(false)
+    const [loading,setLoading] = useState(false)
 
 
     
     const handleSubmit = (e) => {
         
-
+        setLoading(true)
         const configuration = {
             method: "post",
             url: `${constants.BASE_URL}/user/register`,
@@ -34,6 +36,7 @@ export default function Register() {
           axios(configuration)
           .then((result) => {
             setRegister(true);
+            setLoading(false)
 
             window.location.href = "/";
           })
@@ -61,61 +64,79 @@ export default function Register() {
        </div>
       </div>
       <div className="formSection">
-      <Form className="form" onSubmit={(e)=>handleSubmit(e)}>
+
+        {!loading ?
+
+                  <Form className="form" onSubmit={(e)=>handleSubmit(e)}>
 
 
-        <h2 className="formTitle">Register</h2>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter email"
-          className="formInput"
-          style={{border: error ?  "2px solid red" : ""}}
-        />
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          className="formInput"
-          style={{border: error ?  "2px solid red" : ""}}
-        />
+                  <h2 className="formTitle">Register</h2>
+                  <input
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter email"
+                    className="formInput"
+                    style={{border: error ?  "2px solid red" : ""}}
+                  />
+                  <input
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Password"
+                    className="formInput"
+                    style={{border: error ?  "2px solid red" : ""}}
+                  />
 
-        <input
-          type="date"
-          name="birthday"
-          value={birthday}
-          onChange={(e) => setBirthday(e.target.value)}
-          placeholder="Birthday"
-          className="formInput"
-          style={{border: error ?  "2px solid red" : ""}}
-        />
-  
+                  <input
+                    type="date"
+                    name="birthday"
+                    value={birthday}
+                    onChange={(e) => setBirthday(e.target.value)}
+                    placeholder="Birthday"
+                    className="formInput"
+                    style={{border: error ?  "2px solid red" : ""}}
+                  />
 
 
-        <Button
-          variant="primary"
-          type="submit"
-          onClick={(e) => handleSubmit(e)}
-          className="formButton"
-        >
-        Register
-        </Button>
-      
-        <p className="formQuestion">Dont have an account? <a href="/">Login</a></p>
-        {
-        error 
-        ?
 
-        <p style={{color:"red"}}>error creating user</p>: 
-        <p></p>
-      
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    onClick={(e) => handleSubmit(e)}
+                    className="formButton"
+                  >
+                  Register
+                  </Button>
+
+                  <p className="formQuestion">Dont have an account? <a href="/">Login</a></p>
+                  {
+                  error 
+                  ?
+
+                  <p style={{color:"red"}}>error creating user</p>: 
+                  <p></p>
+
+                  }
+
+                  </Form>
+
+                :
+
+                <ProgressBar
+                      height="80"
+                      width="80"
+                      ariaLabel="progress-bar-loading"
+                      wrapperStyle={{}}
+                      wrapperClass="progress-bar-wrapper"
+                      borderColor = '#87847b'
+                      barColor = '#87847b'
+              />
+
         }
-       
-      </Form>
+      
 
       </div>
       

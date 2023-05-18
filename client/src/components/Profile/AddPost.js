@@ -77,23 +77,8 @@ const AddPosts = () => {
       <div className="addPosts">
           
       <div className="postUploadSection">
-        <div className="postUploadPreview">
-            <p className="postTitle">{title}</p>
-            <div style={{backgroundImage:`url("${preview}")`}} className="postImagePreview"></div>
-            
-            <p className="postCaption">{caption}</p>
-
-        </div>
-         
-      </div>
-
-      <div className="postUploadSection">
-       
-          
-           
-
-         <div className="postUploadForm">
-         <input
+        
+        <input
               type="text"
               name="email"
               value={title}
@@ -101,8 +86,21 @@ const AddPosts = () => {
               placeholder="Enter Title"
               className="postUploadInput"
               
-          />
-          <input
+        />
+        <div style={{backgroundImage:`url("${preview}")`}} className="postImagePreview">
+
+         
+                
+                  <label class="custom-file-upload-ProfileSettings">
+                    <input className="imageuploadInput" onChange={fileSelected} type="file" accept="image/*"/>
+                    <AiOutlineCloudUpload className="uploadIconProfileSettings"/>Profile Image
+                  </label>
+
+              
+            
+        </div>
+
+        <input
               type="text"
               name="email"
               value={caption}
@@ -111,30 +109,22 @@ const AddPosts = () => {
               className="postUploadInput"
               
           />
-
-          
-        <label class="custom-file-upload">
-          <input onChange={fileSelected} type="file" accept="image/*"/>
-          <AiOutlineCloudUpload className="uploadIcon"/>Upload
-      </label>
-         
-         
-
           <Button
-          variant="primary"
-          type="submit"
-          onClick={(e) => handleSubmit(e)}
-          className="formButton"
-        >
-        Add Post
-        </Button>
-
-         </div>
-         
+              variant="primary"
+              type="submit"
+              onClick={(e) => handleSubmit(e)}
+              className="formButton"
+          >
+            Add Post
+          </Button>
           
-        
-      
+
+
+       
+         
       </div>
+
+      
     
   </div>
   :
