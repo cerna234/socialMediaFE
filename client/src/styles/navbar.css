@@ -3,7 +3,7 @@
     width: 30vh;
     z-index: 100;
     height: 100vh;
-    background-color: #181b20;
+    background-color: #161616;
     position: fixed;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.111);
     display: flex;
@@ -13,15 +13,21 @@
     top: 0;
     overflow-y: scroll;
     min-height: 200px;
-    min-width: 130px;
+    min-width: 180px;
+ 
+    
     
    
+}
+
+.logo{
+    display: none;
 }
 .navBarClosed{
     width: 10vh;
     z-index: 100;
     height: 100%;
-    background-color: #181b20;
+    background-color: #161616;
     position: fixed;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.111);
     display: flex;
@@ -30,8 +36,9 @@
     left: 0;
     top: 0;
     overflow-y: scroll;
-    min-height: 200px;
-    min-width: 130px;
+    min-width: 100px;
+  
+
    
 }
 
@@ -40,10 +47,12 @@
     display: flex;
     justify-content: end;
     padding: 20px;
+    display: flex;
 
 }
 .closeNav{
     color: white;
+    cursor: pointer;
 
     
 }
@@ -67,6 +76,7 @@
     background-image: url("https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
     background-size: cover;
     background-position: center;
+    min-height: 100px;
 }
 .navProfileInfo{
     width: 100%;
@@ -77,6 +87,11 @@
     align-items: center;
 }
 .navButtonContainer{
+    width: 100%;
+    height: 70%;
+}
+
+.CloseNavButtonContainer{
     width: 100%;
     height: 70%;
 }
@@ -128,6 +143,7 @@
         width: 20vh;
        
        
+       
     }
     .navIcon{
         font-size: 30px;
@@ -139,6 +155,8 @@
         width: 100%;
        
         font-size: 30px;
+        transition: 1s ease-in-out;
+        
         
     }
 
@@ -148,11 +166,74 @@
         font-size: 13px;
     }
 
-    .navBarClosed{
+
+    .navBar{
+        width: 100%;
+        z-index: 100;
+        height: 100vh;
+        transition: .4s ease-in-out;
         
-        min-width: 50px;
+        
+       
+    }
+    .navBarClosed{
+        width: 100%;
+        z-index: 100;
+        height: 10vh;
+        min-height: 70px;
+        min-height: none;
+        transition: .5s ease-in-out;
+    
+    
+
        
     }
 
+    .closeNavContainer{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+      
+        
+       
+    
+    }
+
+    .navButtonContainer{
+        width: 100%;
+        height: 70%;
+    }
+    
+    .navButtonContainer{
+        width: 100%;
+        height: 0%;
+    }
+
+    
+    
+  .CloseNavButtonContainer{
+    display: none;
+  }
+    
    
+  .logo{
+    display:block;
+ 
+    color: white;
+    top: -20%;
+}
+
+
+.closeNav{
+    color: white;
+ 
+    position: relative;
+    top: -20%;
+    
+
+
+    
+}
   }

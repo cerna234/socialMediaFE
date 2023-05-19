@@ -29,18 +29,21 @@ const handleSubmit = (e) => {
 
       axios(configuration)
       .then((result) => {
-        setLoading(false)
+        
+    
         cookies.set("TOKEN", result.data.token, {
             path: "/",
           });
 
 
-        setLogin(true);
+        
         window.location.href = "/profile";
       })
       .catch((error) => {
         error = new Error();
         setError(true)
+        console.log(error)
+        setLoading(false)
       });
     e.preventDefault();
 
@@ -86,6 +89,7 @@ const handleSubmit = (e) => {
                    <Button
                      variant="primary"
                      type="submit"
+                     
                      onClick={(e) => handleSubmit(e)}
                      className="formButton"
                    >
