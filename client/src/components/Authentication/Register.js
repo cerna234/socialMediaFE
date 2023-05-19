@@ -43,6 +43,7 @@ export default function Register() {
           .catch((error) => {
             setError(true)
             error = new Error();
+            setLoading(false)
           })
           
           :

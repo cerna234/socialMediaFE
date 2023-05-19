@@ -17,7 +17,7 @@
 .formSection{
     width: 50%;
     height: 100%;
-    background-color: rgb(40, 43, 47);
+    background-color: #161616;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,10 +45,11 @@
     width: 200px;
     padding: 15px 10px;
     margin: 10px;
-    background-color: rgb(8, 8, 153);
+    background-color: rgb(35, 3, 139) !important;
+    
     color: white;
     border-radius: 100px;
-    border: none;
+    border: none !important;
     cursor: pointer;
 }
 

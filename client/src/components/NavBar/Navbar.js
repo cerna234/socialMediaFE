@@ -9,7 +9,8 @@ import Cookies from "universal-cookie";
 import * as constants from "../../Constants"
 import { useEffect,useState } from "react";
 
-import {AiOutlineCaretLeft,AiFillCaretRight} from "react-icons/ai"
+import {AiOutlineClose} from "react-icons/ai"
+import { GiHamburgerMenu} from "react-icons/gi";
 
 const Navbar = () => {
    const [username,setUsername] = useState();
@@ -85,7 +86,7 @@ const Navbar = () => {
 
             
                 <div onClick={closeNav} className="closeNavContainer">
-                    <AiOutlineCaretLeft className="closeNav"/>
+                    <AiOutlineClose className="closeNav"/>
                 </div>
 
                 <div className="navProfileInfo">
@@ -121,14 +122,15 @@ const Navbar = () => {
 
 
             
-            <div onClick={closeNav} className="closeNavContainer">
-                <AiFillCaretRight className="closeNav"/>
+            <div  className="closeNavContainer">
+                <p className="logo">MCSOCIALMEDIA</p>
+                <GiHamburgerMenu onClick={closeNav} className="closeNav"/>
             </div>
 
            
            
 
-            <div className="navButtonContainer">
+            <div className="CloseNavButtonContainer">
                 {
                     navBardata.map((value,key) => {
                         return(
