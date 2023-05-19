@@ -10,6 +10,70 @@
    
 
 }
+.deleteWindow{
+    width: 100vh;
+    height: 100%;
+    z-index: 101;
+    background-color: rgba(42, 41, 41, 0.302);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  
+}
+
+.innerDeleteWindow{
+    width: 50%;
+    
+    border-radius: 20px;
+    background-color: rgba(27, 27, 27, 0.898);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    
+}
+.deleteInfo{
+    color: white;
+    width: 100%;
+    height: 50%;
+  
+    text-align: center;
+    cursor: pointer;
+    padding: 20px;
+    
+
+ 
+}
+
+.deleteInfo:hover{
+    background-color: rgba(65, 63, 63, 0.696);
+
+ 
+}
+.deletePost{
+    color: red;
+    position: absolute;
+    z-index: 100;
+    font-size: 30px;
+
+
+    cursor: pointer;
+    
+}
+
+.deletePostOption{
+    color: rgb(251, 251, 251);
+    z-index: 100;
+    font-size: 30px;
+
+
+    cursor: pointer;
+    
+}
 
 .postsPreview{
     width: 100%;
@@ -103,3 +167,20 @@
     font-size: 20px;
     text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.474);
 }
+
+
+
+
+@media only screen and (max-width: 600px) {
+   
+  
+.innerDeleteWindow{
+    width: 100%;
+    
+    
+
+    
+}
+
+   
+  }

@@ -6,7 +6,7 @@ import axios from "axios";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { AiOutlinePlusSquare } from "react-icons/ai";
+import { AiOutlineDelete } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import * as constants from "../Constants"
 
@@ -20,6 +20,10 @@ const Posts = ({url}) => {
     const [posts, setPosts] = useState([]);
     const cookies = new Cookies();
     const token = cookies.get("TOKEN");
+    const [user,setUser] = useState(null);
+    const [deleteWindow,setDeleteWindow] = useState(false)
+    const [postToDelete,setPostToDelete] = useState(false)
+    
     
    
 
@@ -51,6 +55,26 @@ const Posts = ({url}) => {
           .catch((error) => {
             error = new Error();
           });
+
+          const configuration1 = {
+            method: "get",
+            url: `${constants.BASE_URL}/user/profile`,
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          };
+
+          axios(configuration1)
+      .then((result) => {
+        // assign the message in our result to the message we initialized above
+      
+        setUser(result.data._id);
+      
+        
+      })
+      .catch((error) => {
+        error = new Error();
+      });
         
      },[]);
 
@@ -60,6 +84,30 @@ const Posts = ({url}) => {
         window.location.href = `/post/${individualPostId}`;
      }
 
+     const deletePost = (postId) => {
+        console.log("HELLO")
+        
+       
+        const configuration = {
+            method: "delete",
+            url: `${constants.BASE_URL}/posts/deletePost`,
+            data: {id : postId}
+           
+          };
+    
+          
+    
+          axios(configuration)
+          .then((result) => {
+           
+                window.location.href = "/profile";
+           
+          })
+          .catch((error) => {
+            error = new Error();
+          });
+          
+     }
 
    
     return (
@@ -72,26 +120,57 @@ const Posts = ({url}) => {
                
         
     
-
+          
                 <Container fluid="xxl" >
-
+ 
                     <Row className="postsRow">
+                        
+
+                        {deleteWindow ?
+
+                        <div className="deleteWindow">
+                            <div className="innerDeleteWindow">
+                                <p className="deleteInfo" style={{color:"rgb(160, 35, 35)"}} onClick={() => {deletePost(postToDelete)}}>Delete Post</p>
+                                <p className="deleteInfo" onClick={() => {setDeleteWindow(false)}}>cancel</p>
+                            </div>
+                          
+                        </div>
+
+                        :
+                        ""
+                        }
+                        
                 {posts.map((value,key) => {
                     return(
                       
                            
 
-
-                        <Col key={key} onClick={() => {individualPost(value._id)}} className="column" lg>
+                        
+                        <Col key={key}  className="column" lg>
+                         
+                     
                             <div style={{backgroundImage:`url(${value.postImage})`}}  className="postPreview">
-                               <div className="postInfo">
+                                  
+                                    {value.author === user ? 
+                                    <AiOutlineDelete onClick={() => {setPostToDelete(value._id); setDeleteWindow(true)} } className="deletePost"/>
+                                            :
+                                        ""
+                                    }
+                               <div onClick={() => {individualPost(value._id)}} className="postInfo">
+                               
                                     <div className="postInfoInner">
+                                   
                                         <p>{value.title}</p>
                                         <p>{value.caption}</p>
+                                        
 
                                     </div>
+                                    
                                  
                                </div> 
+                               
+
+                              
                             </div>
                         
                     
