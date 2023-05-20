@@ -6,14 +6,15 @@ import axios from "axios";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { AiOutlineDelete } from "react-icons/ai";
+import { AiOutlineDelete, AiFillHeart } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import * as constants from "../Constants"
 
 
 
 
-const Posts = ({url}) => {
+
+const Posts = ({url,page}) => {
 
     const navigate = useNavigate();
  
@@ -120,7 +121,7 @@ const Posts = ({url}) => {
                
         
     
-          
+                
                 <Container fluid="xxl" >
  
                     <Row className="postsRow">
@@ -148,10 +149,10 @@ const Posts = ({url}) => {
                         
                         <Col key={key}  className="column" lg>
                          
-                     
+                       
                             <div style={{backgroundImage:`url(${value.postImage})`}}  className="postPreview">
-                                  
-                                    {value.author === user ? 
+
+                                    {value.author === user && page !== "trending" ? 
                                     <AiOutlineDelete onClick={() => {setPostToDelete(value._id); setDeleteWindow(true)} } className="deletePost"/>
                                             :
                                         ""
@@ -160,8 +161,13 @@ const Posts = ({url}) => {
                                
                                     <div className="postInfoInner">
                                    
-                                        <p>{value.title}</p>
-                                        <p>{value.caption}</p>
+                                        <p className="PostPreviewTitle">{value.title}</p>
+                                        <div className="postPreviewLikeContainer">
+                                            <AiFillHeart className="likedPreviewHeart"/>
+                                            <p className="likedPreviewNumber">{value.likes?.length}</p>
+                                        
+                                        </div>
+                                        
                                         
 
                                     </div>

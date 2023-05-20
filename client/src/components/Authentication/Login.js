@@ -51,7 +51,7 @@ const handleSubmit = (e) => {
     return (
         <div className="LoginPage">
             
-            <div style={{backgroundImage:`url("https://images.unsplash.com/photo-1594445863100-9cbf9d747e1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80")`}} className="splashPageSection">
+            <div style={{backgroundImage:`url("https://images.unsplash.com/photo-1684079650375-f361341ea1f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=701&q=80")`}} className="splashPageSection">
              <div  className="SplashinnerContainer">
                 <p className="loginSplashTitle">Welcome back!</p>
                 <p className="loginSplashSubtext">Sign in to access your account.</p>
@@ -71,7 +71,7 @@ const handleSubmit = (e) => {
                      onChange={e => { setEmail(e.target.value); setError(false) }}
                      placeholder="Enter email"
                      className="formInput"
-                     style={{border: error ?  "2px solid red" : ""}}
+                     style={{border: error ?  "2px solid rgba(255, 30, 0, 0.485" : ""}}
                    />
      
                    <input

@@ -9,8 +9,9 @@ const Trending = () => {
          <div className="trendingPosts">
            
            <p className="trendingPostTitle">TRENDING</p>
+           <p className="trendingSubTitle">Curated collection of popular and engaging posts that are currently trending.</p>
   
-          <Posts url="/posts/trending"/>
+          <Posts url="/posts/trending" page="trending"/>
         
          
        </div>

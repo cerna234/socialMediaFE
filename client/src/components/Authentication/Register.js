@@ -20,7 +20,7 @@ export default function Register() {
     
     const handleSubmit = (e) => {
         
-        setLoading(true)
+        
         const configuration = {
             method: "post",
             url: `${constants.BASE_URL}/user/register`,
@@ -31,14 +31,15 @@ export default function Register() {
             },
           };
 
+          setLoading(true)
+          password.length > 4 && email.length > 4 ? 
           
-          password.length && email.length > 4 ? 
           axios(configuration)
+          
           .then((result) => {
-            setRegister(true);
-            setLoading(false)
-
             window.location.href = "/";
+
+        
           })
           .catch((error) => {
             setError(true)
@@ -47,8 +48,8 @@ export default function Register() {
           })
           
           :
-
-          setError(true);
+          setLoading(false)
+          setError(true)
           
         e.preventDefault();
         
@@ -58,7 +59,7 @@ export default function Register() {
     return (
       <div className="LoginPage">
 
-      <div style={{backgroundImage:`url("https://images.unsplash.com/photo-1613578519735-ce2724cdec3d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80")`}} className="splashPageSection">
+      <div style={{backgroundImage:`url("https://images.unsplash.com/photo-1683575967913-e1cf21874ed2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=401&q=80")`}} className="splashPageSection">
        <div className="innerContainer">
         
           
@@ -117,7 +118,7 @@ export default function Register() {
                   error 
                   ?
 
-                  <p style={{color:"red"}}>error creating user</p>: 
+                  <p className="error">error creating user</p>: 
                   <p></p>
 
                   }

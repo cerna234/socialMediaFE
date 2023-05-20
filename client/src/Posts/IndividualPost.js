@@ -50,7 +50,7 @@ const IndividualPost = () => {
           .then((result) => {
            
 
-            console.log(result.data)
+           
             setpostData(result.data.postInformation)
             setLikes(result.data.postInformation.likes.length)
             setLiked(result.data.postInformation.likes.includes(result.data.userInformation))
@@ -161,7 +161,7 @@ const IndividualPost = () => {
 
              <div className="IndividualTrendingPosts">
                <div className="individualPostTrendingTitleContainer">
-                 <AiFillFire className="trendingIcon"/>
+              
                  <p className="trendingTitle">TRENDING POSTS</p>
 
                </div>

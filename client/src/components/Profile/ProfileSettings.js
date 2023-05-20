@@ -90,7 +90,9 @@ const handleSubmit = async (e) => {
         
       })
       .catch((error) => {
+        setLoading(false)
         error = new Error();
+        console.log(error)
       });
 
 
@@ -124,7 +126,7 @@ const handleSubmit = async (e) => {
 
             <p className="profileSettingDate"><FaBirthdayCake/> {profileData?.birthday}</p>
 
-            <input type="date" className="profileSettingDateInput" value={profileData?.birthday} onChange={e => {setDate(e.target.value)}}></input>
+            <input type="date" className="profileSettingDateInput" value={date} onChange={e => {setDate(e.target.value)}}></input>
 
 
             <Button

@@ -6,8 +6,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    min-height: 300px;
     
    
+}
+.trendingSubTitle{
+    color: rgba(237, 237, 237, 0.688);
+    width: 60%;
+    text-align: center;
 }
 
 .trendingPostTitle{
@@ -17,6 +23,8 @@
     padding-top: 20px;
     text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.474);
 }
+
+
 
 
 @media only screen and (max-width: 600px) {

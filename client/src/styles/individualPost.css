@@ -22,7 +22,7 @@
 }
 
 .individualPost{
-    width: 50%;
+    width: 70%;
     height: 80%;
   
 }
@@ -97,6 +97,9 @@
     align-items: right;
     flex-direction: column;
     justify-content: right;
+    left: 50px;
+    position: relative;
+ 
     
   
 
