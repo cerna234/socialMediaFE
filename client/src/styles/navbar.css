@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 .navBar{
     width: 30vh;
-    z-index: 100;
+    z-index: 106;
     height: 100vh;
 
     position: fixed;
