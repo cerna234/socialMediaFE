@@ -139,14 +139,14 @@ const IndividualPost = () => {
                  <div className="individualPostInfo">
                      <div className="individualpostInformation">
                          <p>{postData.title}</p>
-                         <p>{postData.caption}</p>
+                         <p className="postCaption">{postData.caption}</p>
                      </div>
 
                      <div className="individualPostInteractions">
                        <div className="individualPostInner">
                        <p onClick={() => {
                            postLike()
-                         }}><AiFillHeart style={{color: liked == true ? "red" : "white"}} /></p>
+                         }}><AiFillHeart  style={{color: liked === true ? "red" : "white",cursor:"pointer"}} /></p>
                          <p>{likes}</p>
 
                        </div>

@@ -33,7 +33,7 @@ const AddPosts = () => {
             setPreview(URL.createObjectURL(event.target.files[0]))
             setFile(file)
           }
-          console.log(file)
+          
           
 
        

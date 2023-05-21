@@ -184,7 +184,23 @@
     font-family: 'Josefin Sans', sans-serif;
 }
 
+/* trending Page Posts  */
+.trendingPostContainer{
+    width: 80%;
+    height: 80vh;
+    background-color: blue;
+}
+.trendingPagePosts{
+    background-color: red;
+    width: 80%;
+    height: 100%;
+}
 
+.TrendingpostImage{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
 
 @media only screen and (max-width: 600px) {
    
@@ -200,7 +216,7 @@
 .deletePost{
     color: red;
     position: absolute;
-    z-index: 100;
+    z-index: 90;
     font-size: 40px;
     width: 10%;
     padding-top: 10px;
